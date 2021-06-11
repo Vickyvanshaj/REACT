@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
-import React from "react";
+import React from 'react'
+import ReactDOM from 'react-dom'
 import Student from './Student';
 
-ReactDOM.render(<Student roll="177" branch="IT" />,document.getElementById('root')); 
+ReactDOM.render(<Student/>,document.getElementById('root'));

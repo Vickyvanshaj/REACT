@@ -1,42 +1,30 @@
 import React, { Component } from 'react'
 
-// //state outside the constructer
-// class Student extends Component{
-//     state={
-//         name:"Vicky",
-//         age:24,
-//         branch:this.props.branch,
-//     }
-//     //props cant be modified but if you add props to state like above,you can modify it
-//     render()
-//     {
-//         return <React.Fragment>
-//             <h1>Hello {this.state.name}</h1>
-//             <p>Your age is {this.state.age}</p>
-//             <p>Your roll number is {this.props.roll}</p>
-//             <p>Your Branch is {this.state.branch}</p>
-//         </React.Fragment>
-//     }
-// }
-
-
-//state inside the constructor
 class Student extends Component{
-   constructor(props){
-       super(props);
-       this.state={
-        name:"Vicky",
-        age:24,
-        branch:this.props.branch,
-    };
-   }
-   render()
-    {
-        return <React.Fragment>
+    //if you neccesarily have to use regular fn instead of arrow, so to get this access, do this
+    constructor(props){
+        super(props);
+        this.state={
+            name:"Rohan",
+            roll:177,
+        }
+        this.handleClick=this.handleClick.bind(this);
+
+    }
+    handleClick(){
+        console.log('button clicked',this);
+        //this will be undefined bcoz class is in strict mode in JS,so here this is undefined.Use arrow methods instead which binds this object.
+
+    }
+    // handleClick = () =>{
+    //     console.log('button clicked',this);
+    // }
+    render(){
+        return  <React.Fragment>
             <h1>Hello {this.state.name}</h1>
-            <p>Your age is {this.state.age}</p>
-            <p>Your roll number is {this.props.roll}</p>
-            <p>Your Branch is {this.state.branch}</p>
+            <h1>Hello {this.state.roll}</h1>
+            
+            <button onClick={this.handleClick}>Click Me</button>
         </React.Fragment>
     }
 }
