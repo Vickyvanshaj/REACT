@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
 
 class Student extends Component{     
-    constructor(props){
-        super(props);
-        this.state={
-            name:"Rohan",
-            roll:this.props.roll,
-        };
-
+   
+    state={
+        id:"12",
+        name:"Rahul",
+    };
+    handleClick = (id,name,e) =>{
+        console.log(id,name,e);
     }
-    
-    handleClick = () =>{
-        this.setState({name:"Vicky",roll:"177"});
-        console.log('button clicked',this);
-    }
-    //set State using function
-    // handleClick = () =>{
-    //     this.setState(function (state,props) {
-                // console.log(state)
-    //     })
-    // }
+   handleClickArg = (e)=>{
+       return this.handleClick(this.state.id)
+   }
     render(){
         return  <React.Fragment>
             <h1>Hello {this.state.name}</h1>
-            <h1>Hello {this.state.roll}</h1>
+            <h1>Hello {this.props.roll}</h1>
             
-            <button onClick={this.handleClick}>Click Me</button>
+            <button onClick={this.handleClick.bind(this,this.state.id,this.state.name)}>Delete</button>
+            <button onClick={(e)=>this.handleClick(this.state.id,this.state.name,e)}>Delete </button>
+            {/* <button onClick={this.handleClickArg}>Delete</button> */}
+
         </React.Fragment>
     }
 }
