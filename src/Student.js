@@ -1,15 +1,32 @@
-import React from 'react'
-//Function
+import React, { Component } from 'react'
 
-function Student(props){
-    function handleClick(){
-        console.log('Button clicked');
+class Student extends Component{     
+    constructor(props){
+        super(props);
+        this.state={
+            name:"Rohan",
+            roll:this.props.roll,
+        };
+
     }
-    return (
-        <div>
-            <h1>Hello vanshaj</h1>
-            <button onClick={handleClick}>Click Me</button>
-        </div>
-    )
+    
+    handleClick = () =>{
+        this.setState({name:"Vicky",roll:"177"});
+        console.log('button clicked',this);
+    }
+    //set State using function
+    // handleClick = () =>{
+    //     this.setState(function (state,props) {
+                // console.log(state)
+    //     })
+    // }
+    render(){
+        return  <React.Fragment>
+            <h1>Hello {this.state.name}</h1>
+            <h1>Hello {this.state.roll}</h1>
+            
+            <button onClick={this.handleClick}>Click Me</button>
+        </React.Fragment>
+    }
 }
 export default Student;
