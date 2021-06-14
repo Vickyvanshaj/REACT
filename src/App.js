@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import useCustomCounter from './Custom';
+import User from './User';
+import Guest from './Guest';
 
-function  App() {
-    const data=useCustomCounter();
-    return (
-        <React.Fragment>
-            <h1>Count UP: {data.count}</h1>
-            <button type="button" onClick={data.handleIncrement}></button>
-        </React.Fragment>
-    )
+const App=(props)=>{
+    const isRegistered=props.consumer;
+    if(isRegistered){
+      
+      return <User/>
+    }
+    return <Guest/> 
+    
 }
-export default App;
+export default App; 
