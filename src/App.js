@@ -1,28 +1,23 @@
-import React,{useState} from 'react';
-import User from './User';
-import Guest from './Guest';
-const App=()=>{
-    const [isLoggedIn,setLog]=useState(true);
+import React from 'react'
+
+const App=(props)=>{
+    // const arr=[10,20,30,40];
     // return <React.Fragment>
-    // {(isLoggedIn==true)?<User setLogfn={setLog}/>:<Guest setLogfn={setLog}/>}
+    //     <ul>
+    //      {arr.map((num)=>{
+    //         return <li>{num*4}</li>
+    //      })}
+    //     </ul>
     // </React.Fragment>
-   
-    return (
-        <div>
-            {
-                (
-                    ()=>{
-                        if(isLoggedIn)
-                        {
-                            return <User setLogfn={setLog}/>;
-                        }
-                        else{
-                            return <Guest setLogfn={setLog}/>;
-                        }
-                    })()
-                
-            }
-        </div>
-    )
+    const arr=props.numbers;
+    const newarr=arr.map(num=>{
+        return <li>{num*2}</li>
+    });
+    console.log(newarr); //an array of object
+    return <React.Fragment>
+        <ul>
+            {newarr}
+        </ul>
+    </React.Fragment>
 }
-export default App;
+export default App
