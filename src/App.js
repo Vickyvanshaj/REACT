@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import User from './User';
-import Guest from './Guest';
-
 const App=(props)=>{
-    const isRegistered=props.consumer;
-    if(isRegistered){
-      
-      return <User/>
-    }
-    return <Guest/> 
-    
+    console.log(props)
+    const prime=props.primeMember;
+    return <React.Fragment>
+        <h1>Welcome User</h1>
+        {prime && <User/>}
+    </React.Fragment>
 }
-export default App; 
+export default App;

@@ -1,9 +1,10 @@
-import React n  from 'react'
+import React,{Fragment} from 'react'
+import ReactDOM from 'react-dom'
 
-const User=()=>{
+
+function User(){
     return <React.Fragment>
-         <h1>Welcome Vicky</h1>
-         <button>Logout</button>
+        <h1>Prime Membership</h1>
     </React.Fragment>
 }
 export default User;
