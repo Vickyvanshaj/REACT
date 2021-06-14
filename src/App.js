@@ -1,23 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-const App=(props)=>{
-    // const arr=[10,20,30,40];
-    // return <React.Fragment>
-    //     <ul>
-    //      {arr.map((num)=>{
-    //         return <li>{num*4}</li>
-    //      })}
-    //     </ul>
-    // </React.Fragment>
-    const arr=props.numbers;
-    const newarr=arr.map(num=>{
-        return <li>{num*2}</li>
-    });
-    console.log(newarr); //an array of object
+const App=()=>{
+    const [users,setUsers]=useState([
+        {id:101,name:"Rahul",password:"2223qqa"},
+        {id:102,name:"Vicky",password:"qw211"},
+        {id:103,name:"Ram",password:"dsw221"},
+    ]);
+    const [isLoggedIn,setLogged]=useState(true);
+    
     return <React.Fragment>
-        <ul>
-            {newarr}
-        </ul>
+        <ul>{users.map((elem)=>{
+            return <li>{elem.id}-{elem.name}-{elem.password}</li>
+        })}</ul>
     </React.Fragment>
 }
-export default App
+export default App;
