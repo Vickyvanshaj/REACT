@@ -9,9 +9,9 @@ const App=()=>{
     const [isLoggedIn,setLogged]=useState(true);
     
     return <React.Fragment>
-        <ul>{users.map((elem)=>{
-            return <li>{elem.id}-{elem.name}-{elem.password}</li>
-        })}</ul>
+        {users.map((elem)=>{
+            return <h1 key={elem.id}>{elem.id}-{elem.name}-{elem.password}</h1>
+        })}
     </React.Fragment>
 }
 export default App;
