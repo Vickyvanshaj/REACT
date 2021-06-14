@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class App extends Component {
-  componentDidMount(){
-    console.log('app mounted');
-  }
-  componentWillUnmount(){
-    console.log('App umounted')
-  }
-  render() {
-    return (
-      <div>
-        <h1>App component</h1>
-      </div>
-    )
-  }
+function App(){
+    const [name,setName]=useState("Rahul");
+    const [roll,setRoll]=useState(101);
+    //you cant use setName here..it will go in the infinte loop. rather use inside an event handler
+
+    const handleClick = () =>{
+        setName("Vanshaj");
+        setRoll('188');
+    }
+    return <React.Fragment>
+        <h1> Hello {name}</h1>
+        <p>Your roll is {roll}</p>
+        <button onClick={handleClick}>Change</button>
+    </React.Fragment>
 }
+export default App;
