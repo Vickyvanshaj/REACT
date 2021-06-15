@@ -1,12 +1,15 @@
 import React from 'react'
 
 const App=()=>{
-    const btnStyle={
-        color:"blue",
-        backgroundColor:"red",
-    };
+    const textc={
+        color:'blue'
+    }
+    const texts={
+        fontSize:'80px'
+    }
     return <React.Fragment>
-        <button style={btnStyle}>Button</button>
+        <h1 style={{...textc,...texts}}>hello app</h1>
+        {/* <h1 style={{ ...textc, ...{ fontSize: "200px" } }}>Hello App</h1> */}
     </React.Fragment>
 }
 export default App;
