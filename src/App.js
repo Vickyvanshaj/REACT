@@ -1,13 +1,12 @@
 import React from 'react'
-import User from './User'
-const App=(props)=>{
-    const arr=props.numbers;
-    const newarr=arr.map((num)=>{
-        return <User key={num} value={num}/>
-    });
-    //key is not passed as props//will give error in console
+
+const App=()=>{
+    const btnStyle={
+        color:"blue",
+        backgroundColor:"red",
+    };
     return <React.Fragment>
-            <ul>{newarr}</ul>
+        <button style={btnStyle}>Button</button>
     </React.Fragment>
 }
 export default App;
