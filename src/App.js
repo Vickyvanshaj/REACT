@@ -1,9 +1,21 @@
-import React from 'react'
-import pic from "./bhau.jpg"
+import React,{useState} from 'react'
 
 const App=()=>{
-    return <React.Fragment>
-        <img src={pic} width="200px"></img>
-    </React.Fragment>
+    const [value,setValue]=useState("Vanshaj")
+  let handleChange=(e)=>{
+        console.log(e.target.value)
+        setValue(e.target.value.toUpperCase())
+
+        
+    }
+    return (
+        <div>
+            <form>
+                <h2>Controlled by react</h2>
+                <input type="text" value={value} onChange={handleChange}/> 
+                {/*if you use value="vanshaj" here,then this becomes readonly.ou can use defaultValue or you can also use onChange method */}
+            </form>
+        </div>
+    )
 }
 export default App;
