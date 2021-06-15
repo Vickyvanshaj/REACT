@@ -1,20 +1,11 @@
-import React,{useState} from 'react'
-
+import React from 'react'
+import "./App.css";
+import User from './User';
 const App=()=>{
-    const [change,setChange]=useState(false)
-    const btnStyle={
-        color:'blue',
-        backgroundColor:'orange'
-    }
-    const handleClick = ()=>{
-        setChange(true)
-    }
-    if(change===true)
-    {
-        btnStyle.backgroundColor='red';
-    }
     return <React.Fragment>
-        <button style={btnStyle} onClick={handleClick}>Change</button>
+        <h1 className='txt'>Hello App</h1>
+        <User/>
+        //classname in external css should be unique throughout all css files
     </React.Fragment>
 }
 export default App;
