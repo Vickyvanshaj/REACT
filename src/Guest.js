@@ -1,10 +1,11 @@
 import React from 'react'
 import { MyContext } from './App'
+import {Consumer} from './Context.js'
 const Guest=()=>{
     return (
         <div>
             <h2>Guest Component</h2>
-           <MyContext.Consumer>
+           <Consumer>
                {
                    (data)=>{
                      return <React.Fragment>  <h4>{data.data.roll}</h4>
@@ -12,7 +13,7 @@ const Guest=()=>{
                        </React.Fragment>
                    }
                }
-           </MyContext.Consumer>
+           </Consumer>
         </div>
     )
 }

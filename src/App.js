@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import User from  './User'
 import Guest from './Guest';
-export const MyContext=React.createContext();
+import {Provider} from './Context.js'
 const App=()=>{
     const [state,setState]=useState({
         name:"Rahul",
@@ -16,9 +16,9 @@ const App=()=>{
     }
     return (
         <div>
-            <MyContext.Provider value={contextValue}>
+            <Provider value={contextValue}>
                 <User/>
-            </MyContext.Provider>
+            </Provider>
 
             {/* We need to make a hierarchy till guest from  app. Current hierarchy is App->User->Guest. Only then Guest will be able to access context else not */}
         </div>
