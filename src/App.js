@@ -1,11 +1,11 @@
 import React from 'react'
-import "./App.css";
+import style from "./App.module.css"
 import User from './User';
 const App=()=>{
-    let style=false;
+   
     return <React.Fragment>
-        <h1 className='txtb'>Hello App</h1>
-        <User color={style?"txtb":"txtg"}/>
+        <h1 className={style.txt}>Hello App</h1>
+        <User />
     </React.Fragment>
 }
 export default App;
