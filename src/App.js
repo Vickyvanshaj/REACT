@@ -1,15 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const App=()=>{
-    const textc={
-        color:'blue'
+    const [change,setChange]=useState(false)
+    const btnStyle={
+        color:'blue',
+        backgroundColor:'orange'
     }
-    const texts={
-        fontSize:'80px'
+    const handleClick = ()=>{
+        setChange(true)
+    }
+    if(change===true)
+    {
+        btnStyle.backgroundColor='red';
     }
     return <React.Fragment>
-        <h1 style={{...textc,...texts}}>hello app</h1>
-        {/* <h1 style={{ ...textc, ...{ fontSize: "200px" } }}>Hello App</h1> */}
+        <button style={btnStyle} onClick={handleClick}>Change</button>
     </React.Fragment>
 }
 export default App;
