@@ -1,32 +1,27 @@
 import React,{useState} from 'react'
-
+import User from  './User'
+import Guest from './Guest';
+export const MyContext=React.createContext();
 const App=()=>{
-    const [values,setState]=useState({
-        name:"vansh",
-        password:"122"
+    const [state,setState]=useState({
+        name:"Rahul",
+        roll:188
     });
-  
-    const handleChange=(e)=>{
-       setState({
-           ...values,
-           [e.target.name]:e.target.value,
-           
-       });
+    const handleClickContext=(e)=>{
+        setState({roll:state.roll+1})
     }
-   
+    const contextValue={
+        data:state,
+        handleClick:handleClickContext,
+    }
     return (
         <div>
-            <form>
-                <label>
-                    Name: <input type="text" value={values.name} name="name" onChange={handleChange}/>
-                </label>
-                <br/>
-                <br/>
-                <label>
-                    Password:<input type="text" value={values.password} name="password" onChange={handleChange} />
-                </label>
-            </form>
-        </div>  
+            <MyContext.Provider value={contextValue}>
+                <User/>
+            </MyContext.Provider>
+
+            {/* We need to make a hierarchy till guest from  app. Current hierarchy is App->User->Guest. Only then Guest will be able to access context else not */}
+        </div>
     )
 }
 export default App;
