@@ -1,11 +1,9 @@
 import React from 'react'
-import style from "./App.module.css"
-import User from './User';
+import pic from "./bhau.jpg"
+
 const App=()=>{
-   
     return <React.Fragment>
-        <h1 className={style.txt}>Hello App</h1>
-        <User />
+        <img src={pic} width="200px"></img>
     </React.Fragment>
 }
 export default App;
