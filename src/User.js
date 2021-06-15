@@ -1,8 +1,11 @@
 import React from 'react'
-import "./User.css"
-const User=()=>{
+
+
+const User=(props)=>{
+    
     return <React.Fragment>
-        <h1 className='txt'>Hello Users</h1>
+        <h1 className={props.color}>Hello users</h1>
+        
     </React.Fragment>
 }
 export default User;
